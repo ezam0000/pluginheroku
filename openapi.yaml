@@ -1,0 +1,33 @@
+openapi: 3.0.1
+info:
+  title: GPT-Defeater API
+  description: API for GPT-Defeater plugin to defeat AI detection software.
+  version: 1.0.0
+servers:
+  - url: https://pluginheroku.herokuapp.com
+paths:
+  /generate:
+    post:
+      summary: Generate a response to defeat AI detection software.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompt:
+                  type: string
+                  description: The question or prompt for defeating AI detection software.
+              required:
+                - prompt
+      responses:
+        '200':
+          description: Successful response with the defeated text.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  defeated_text:
+                    type: string
+                    description: The generated defeated text.

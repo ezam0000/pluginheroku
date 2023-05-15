@@ -9,10 +9,10 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://your-app-domain/openapi.yaml",
+    "url": "https://pluginheroku.herokuapp.com/openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "https://your-app-domain/logo.png",
-  "contact_email": "support@example.com",
+  "logo_url": "https://pluginheroku.herokuapp.com/logo.png",
+  "contact_email": "cruz@beamdata.xyz",
   "legal_info_url": "http://www.example.com/legal"
 }
