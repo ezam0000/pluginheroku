@@ -2,20 +2,7 @@ import streamlit as st
 import requests
 import os
 
-# Retrieve the password from the secrets manager
-# PASSWORD = st.secrets["password"]
-
-# # Add a password prompt to the app
-# password_input = st.sidebar.text_input("Enter password", type="password")
-
-# # Check if the entered password matches the expected password
-# if password_input == PASSWORD:
-#     st.success("Access granted!")
-#     # Add your app code here
-# else:
-#     st.error("Access denied.")
-#     # Prevent the rest of the app from running
-#     st.stop()
+API_MANIFEST_URL = "https://ezam0000.github.io/fileefile/ai-plugin.json"
 
 API_KEY = st.secrets["db_username"]
 
