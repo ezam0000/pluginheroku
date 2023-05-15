@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://pluginheroku.herokuapp.com/openapi.yaml",
+    "url": "https://pluginheroku.herokuapp.com/.well-known/openapi.yaml",
     "is_user_authenticated": false
   },
   "logo_url": "https://pluginheroku.herokuapp.com/logo.png",
