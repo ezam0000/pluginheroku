@@ -2,9 +2,7 @@ import streamlit as st
 import requests
 import os
 
-API_MANIFEST_URL = "https://ezam0000.github.io/fileefile/ai-plugin.json"
-
-API_KEY = st.secrets["db_username"]
+API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Add a sidebar with instructions
 with st.sidebar:
@@ -67,10 +65,6 @@ if st.button("Defeat it!"):
         st.error("Error: API rate limit exceeded. Please wait and try again later.")
     else:
         st.error(f"Error: Failed to generate text: {response.status_code} {response.reason}")
-
-# Status at bottom
-# st.subheader("Current Status: ")
-# st.success("Undefeated")
 
 # Images defeated Apps
 st.sidebar.subheader("☠️Apps Defeated☠️")
