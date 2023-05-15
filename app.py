@@ -95,15 +95,12 @@ st.sidebar.subheader("☠️Apps Defeated☠️")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    # st.header("A cat")
     st.sidebar.image("zero.webp", width=150)
 
 with col2:
-    # st.header("A dog")
     st.sidebar.image("gra.webp", width=150)
 
 with col3:
-    # st.header("An owl")
     st.sidebar.image("turn.webp", width=150)
 
 # Serve the ai-plugin.json file
@@ -111,6 +108,6 @@ with col3:
 def serve_ai_plugin_json():
     return send_from_directory(os.path.join(app.root_path, '.well-known'), 'ai-plugin.json')
 
-
-
-
+# Add the following line after your existing code
+if __name__ == '__main__':
+    app.run()
