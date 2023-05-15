@@ -1,6 +1,5 @@
 import streamlit as st
-import requests
-# from dotenv import load_dotenv
+from flask import send_from_directory
 import os
 
 # Retrieve the password from the secrets manager
@@ -82,7 +81,7 @@ if st.button("Defeat it!"):
     elif response.status_code == 401:
         st.error("Error: Authentication failed. Please check your API key.")
     elif response.status_code == 429:
-        st.error("Error: APIrate limit exceeded. Please wait and try again later.")
+        st.error("Error: API rate limit exceeded. Please wait and try again later.")
     else:
         st.error(f"Error: Failed to generate text: {response.status_code} {response.reason}")
 
@@ -106,3 +105,12 @@ with col2:
 with col3:
     # st.header("An owl")
     st.sidebar.image("turn.webp", width=150)
+
+# Serve the ai-plugin.json file
+@app.route('/.well-known/ai-plugin.json')
+def serve_ai_plugin_json():
+    return send_from_directory(os.path.join(app.root_path, '.well-known'), 'ai-plugin.json')
+
+
+
+
