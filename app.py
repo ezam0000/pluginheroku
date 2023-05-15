@@ -1,8 +1,7 @@
 import streamlit as st
 import requests
-import os
 
-API_KEY = os.getenv("OPENAI_API_KEY")
+API_KEY = st.text_input("Enter your OpenAI API key", type="password")
 
 # Add a sidebar with instructions
 with st.sidebar:
