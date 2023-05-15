@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "GPT-Defeater Plugin",
+  "name_for_model": "gpt_defeater",
+  "description_for_human": "Plugin for defeating AI detection software. Ask a question or prompt and get a response.",
+  "description_for_model": "Plugin for defeating AI detection software. Ask a question or prompt and get a response.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://pluginheroku.herokuapp.com/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://pluginheroku.herokuapp.com/logo.png",
+  "contact_email": "cruz@beamdata.xyz",
+  "legal_info_url": "http://www.example.com/legal"
+}
