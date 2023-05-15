@@ -1,5 +1,5 @@
 import streamlit as st
-from flask import send_from_directory
+import requests
 import os
 
 # Retrieve the password from the secrets manager
@@ -14,11 +14,8 @@ if password_input == PASSWORD:
     # Add your app code here
 else:
     st.error("Access denied.")
-    
     # Prevent the rest of the app from running
     st.stop()
-    
-# Add your app code here (if password is correct)
 
 API_KEY = st.secrets["db_username"]
 
@@ -28,10 +25,9 @@ with st.sidebar:
     st.write("To generate text, simply enter your question or prompt in the text area below and click the 'Defeat it!' button.")
     st.subheader("Current Status: ")
     st.success("Undefeated ✅")
-    
 
 st.title("💥GPT-Defeater💥")
-st.subheader("Defeat Ai detection software")
+st.subheader("Defeat AI detection software")
 
 # Set the values here
 temperature = 0.87
@@ -43,7 +39,7 @@ presence_penalty = 1.29
 # Remove the UI elements for temperature, length, top p, frequency penalty, and presence penalty
 input_text = st.text_area("Ask a Question:", height=200)
 
-st.caption('Be specific, this tool can read urls as way of reference or process documentation')
+st.caption('Be specific, this tool can read URLs as a way of reference or process documentation')
 
 if st.button("Defeat it!"):
     url = "https://api.openai.com/v1/completions"
@@ -89,7 +85,7 @@ if st.button("Defeat it!"):
 # st.subheader("Current Status: ")
 # st.success("Undefeated")
 
-#Images defeated Apps
+# Images defeated Apps
 st.sidebar.subheader("☠️Apps Defeated☠️")
 
 col1, col2, col3 = st.columns(3)
@@ -102,12 +98,3 @@ with col2:
 
 with col3:
     st.sidebar.image("turn.webp", width=150)
-
-# Serve the ai-plugin.json file
-@app.route('/.well-known/ai-plugin.json')
-def serve_ai_plugin_json():
-    return send_from_directory(os.path.join(app.root_path, '.well-known'), 'ai-plugin.json')
-
-# Add the following line after your existing code
-if __name__ == '__main__':
-    app.run()
